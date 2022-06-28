@@ -1,0 +1,55 @@
+table:
+  name: employee
+  schema: userschema
+array_relationships:
+- name: leaves
+  using:
+    foreign_key_constraint_on:
+      column: empid
+      table:
+        name: leaves
+        schema: userschema
+- name: org_emps
+  using:
+    foreign_key_constraint_on:
+      column: empid
+      table:
+        name: org_emp
+        schema: userschema
+- name: organizations
+  using:
+    foreign_key_constraint_on:
+      column: empid
+      table:
+        name: organization
+        schema: userschema
+insert_permissions:
+- permission:
+    check: {}
+    columns:
+    - age
+    - empid
+    - name
+  role: user
+select_permissions:
+- permission:
+    columns:
+    - age
+    - empid
+    - name
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check: {}
+    columns:
+    - age
+    - empid
+    - name
+    filter: {}
+  role: user
+delete_permissions:
+- permission:
+    backend_only: false
+    filter: {}
+  role: user

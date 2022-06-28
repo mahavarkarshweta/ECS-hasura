@@ -1,0 +1,23 @@
+table:
+  name: user
+  schema: userschema
+insert_permissions:
+- permission:
+    check: {}
+    columns: []
+  role: user
+select_permissions:
+- permission:
+    columns:
+    - userId
+    - name
+    filter: {}
+  role: user
+update_permissions:
+- permission:
+    check: null
+    columns:
+    - userId
+    - name
+    filter: {}
+  role: user

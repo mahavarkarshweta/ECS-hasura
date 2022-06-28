@@ -1,0 +1,22 @@
+table:
+  name: organization
+  schema: userschema
+object_relationships:
+- name: employee
+  using:
+    foreign_key_constraint_on: empid
+array_relationships:
+- name: leaves
+  using:
+    foreign_key_constraint_on:
+      column: orgid
+      table:
+        name: leaves
+        schema: userschema
+- name: org_emps
+  using:
+    foreign_key_constraint_on:
+      column: orgid
+      table:
+        name: org_emp
+        schema: userschema

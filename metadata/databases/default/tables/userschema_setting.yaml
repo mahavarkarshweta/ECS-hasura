@@ -1,0 +1,10 @@
+table:
+  name: setting
+  schema: userschema
+insert_permissions:
+- permission:
+    check:
+      settingId:
+        _ne: X-Hasura-User-Id
+    columns: []
+  role: user

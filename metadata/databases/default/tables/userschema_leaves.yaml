@@ -1,0 +1,10 @@
+table:
+  name: leaves
+  schema: userschema
+object_relationships:
+- name: employee
+  using:
+    foreign_key_constraint_on: empid
+- name: organization
+  using:
+    foreign_key_constraint_on: orgid

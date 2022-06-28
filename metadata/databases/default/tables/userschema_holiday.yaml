@@ -1,0 +1,10 @@
+table:
+  name: holiday
+  schema: userschema
+insert_permissions:
+- permission:
+    check: {}
+    columns:
+    - id
+    - name
+  role: user
